@@ -1,0 +1,34 @@
+<html>
+   <head>
+      <title>VueJs Instance</title>
+      <script type = "text/javascript" src = "js/vue_dev.js"></script>
+   </head>
+   <body>
+      <div id = "databinding">
+         <component v-bind:is = "view1"></component>
+		 <component v-bind:is = "view2"></component>
+		 <component v-bind:is = "view3"></component>
+      </div>
+      <script type = "text/javascript">
+         var vm = new Vue({
+            el: '#databinding',
+            data: {
+               view1: 'component1',
+			   view2: 'component2',
+			   view3: 'component3'
+            },
+            components: {
+               'component1': {
+                  template: '<div><span style = "font-size:25;color:red;">Dynamic Component</span></div>'
+               },
+			   'component2': {
+                  template: '<div><span style = "font-size:25;color:blue;">Hello</span></div>'
+               },
+			   'component3': {
+                  template: '<div><span style = "font-size:25;color:green;">World</span></div>'
+               }
+            }
+         });
+      </script>
+   </body>
+</html>
