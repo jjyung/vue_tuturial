@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<link href = "css/animate.css" rel = "stylesheet" type = "text/css">
+		<script type = "text/javascript" src = "js/vue_dev.js"></script>
+	</head>
+	<body>
+		<div id = "animate" style = "text-align:center">
+			<transition
+			appear
+			appear-class = "custom-appear-class"
+			appear-active-class = "animated bounceIn">
+				<h1>BounceIn - Animation Example</h1>
+			</transition>
+			<transition
+			appear
+			appear-class = "custom-appear-class"
+			appear-active-class = "animated swing">
+				<h1>Swing - Animation Example</h1>
+			</transition>
+			<transition
+			appear
+			appear-class = "custom-appear-class"
+			appear-active-class = "animated rubberBand">
+				<h1>RubberBand - Animation Example</h1>
+			</transition>
+		</div>
+		<script type = "text/javascript">
+			var vm =  new Vue({
+				el: '#animate',
+				data: {
+					show: true
+				}
+			});
+		</script>
+	</body>
+</html>
