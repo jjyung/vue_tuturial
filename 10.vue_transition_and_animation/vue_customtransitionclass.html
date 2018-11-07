@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<link href = "css/animate.css" rel = "stylesheet" type = "text/css">
+		<script type = "text/javascript" src = "js/vue_dev.js"></script>
+	</head>
+	<body>
+		<div id = "animate" style = "text-align:center">
+			<button @click = "show = !show"><span style = "font-size:25px;">Animate</span></button>
+			<transition
+			name = "custom-classes-transition"
+			enter-active-class = "animated swing"
+			leave-active-class = "animated bounceIn">
+				<p v-if = "show"><span style = "font-size:25px;">Example</span></p>
+			</transition>
+		</div>
+		<script type = "text/javascript">
+			var vm =  new Vue({
+				el: '#animate',
+				data: {
+					show: true
+				}
+			});
+		</script>
+	</body>
+</html>
