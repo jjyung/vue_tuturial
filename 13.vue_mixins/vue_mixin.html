@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>VueJs Instance</title>
+		<script type = "text/javascript" src = "js/vue_dev.js"></script>
+	</head>
+	<body>
+		<div id = "databinding"></div>
+		<script type = "text/javascript">
+			var vm = new Vue({
+				el: '#databinding',
+				data: {
+				},
+				methods: {
+				}
+			});
+			var myMixin = {
+				created: function () {
+					console.log('mixin called');
+					this.startmixin();
+				},
+				methods: {
+					startmixin: function () {
+						alert("Welcome to mixin example");
+					},
+					helloworld: function () {
+						console.log('In HelloWorld');
+					},
+					samemethod: function () {
+						console.log('Mixin: Same Method');
+					}
+				}
+			};
+			var Component = Vue.extend({
+				mixins: [myMixin],
+				created: function () {
+					console.log('component called');
+				},
+				methods: {
+					start: function () {
+						console.log('Start Method');
+					},
+					samemethod: function () {
+						console.log('Main: Same Method');
+					}
+				}
+			});
+			var component = new Component();
+			component.helloworld();
+			component.start();
+			component.samemethod();
+		</script>
+	</body>
+</html>
